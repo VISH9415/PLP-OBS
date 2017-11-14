@@ -20,3 +20,13 @@
 
 !ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2017-11-14 11:29:37.565
 !MESSAGE Server processes have been terminated.
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-11-14 11:41:48.956
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-11-14 11:41:52.014
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2017-11-14 11:41:52.702
+!MESSAGE Module PLPGroup7 on WildFly 8.x not yet fully deployed. Waiting...
