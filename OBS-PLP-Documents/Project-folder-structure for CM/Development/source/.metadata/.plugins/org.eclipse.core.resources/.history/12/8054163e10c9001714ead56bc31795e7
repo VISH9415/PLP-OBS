@@ -1,0 +1,7 @@
+package com.cg.project.utils;
+
+public class RequestPage {
+
+	public static final String redirectToHome = "Home";
+	
+}

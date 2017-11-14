@@ -1,0 +1,8 @@
+package com.cg.project.utils;
+
+public class RequestPage {
+
+	public static final String redirectToLoginPage = "Temp";
+	public static final String redirectToErrorPage = "Error";
+	public static final String redirectToError = "Error";
+}
