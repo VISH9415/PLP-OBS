@@ -6,11 +6,12 @@
     <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<link rel="stylesheet" type="text/css" href="styles/forms.css">
-    	<link rel="stylesheet" type="text/css" href="styles/homeScreen.css">
+    	<link rel="stylesheet" type="text/css" href="styles/home.css">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito|Spectral+SC|Ubuntu" rel="stylesheet">
-        <script src="scripts/index.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <script type="text/javascript" src="scripts/test.js"></script>
     </head>
-    <body>
+    <body onload="return validateDates();">
         <div id="container">
             <div id="header">
                 <ul>
@@ -23,7 +24,8 @@
             
             
             <div id="body">
-                
+ 
+                 <c:if test="${check==0}"> 
                 <div id="openAccountDiv">  
                   <input type="checkbox" id="openAccountform-switch"/>
                     <div id="openAccountButton">
@@ -35,7 +37,7 @@
                     <!-- Open Account Form -->
                     <!--  conditional open account.. if user hasn't opened only then -->
                     <%-- <c:if test="${user.accountId==0}"> --%>
-                    <c:if test="${check!=0}">
+                    
                     <div id="openAccountForm">
                         <h1>Enter your details</h1>
                         <form action="openAccount.htm" method="post">
@@ -80,8 +82,9 @@
                         </form>
                     
                     </div>
-                       </c:if> 
+                        
                     </div>
+                    </c:if>
                  
                 
                 <c:if test="${check!=0}">
@@ -222,7 +225,7 @@
                         <div id="hr-detailedStatementForm">
                             <div id="hr-detailedDetailAsk">
                                 <h1>View Detailed Statement</h1>
-                                <form action="detailedStatement.htm" method="post">
+                                <form action="detailedStatement.htm" method="post" onSubmit="return validateDateForm();">
                             <p>
                             <input type="hidden" name="userName" value="${userName}"/>
                             </p>    
