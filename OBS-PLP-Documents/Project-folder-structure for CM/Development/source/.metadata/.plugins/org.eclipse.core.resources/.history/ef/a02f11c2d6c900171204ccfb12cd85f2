@@ -1,0 +1,135 @@
+package com.cg.project.service;
+
+import java.sql.Date;
+import java.util.List;
+
+import com.cg.project.bean.AccountBean;
+import com.cg.project.bean.CustomerBean;
+import com.cg.project.bean.FundTransferBean;
+import com.cg.project.bean.PayeeBean;
+import com.cg.project.bean.TransactionsBean;
+import com.cg.project.bean.UserBean;
+import com.cg.project.exception.BankingException;
+
+public interface IBankingService
+{
+
+	/**
+	 * 
+	 * Fetch user by user name 
+	 * 
+	 * User record is fetched from user table based on user name provided
+	 * 
+	 * @param userName- user name used to compare the table column user_id
+	 * @return userBean - user record that matches for user name provided
+	 */
+	UserBean fetchUserById(String userName) throws BankingException;
+
+	/**
+	 * Validate bank administrator  
+	 *
+	 *Bank Administrator is validated against userId and password provided
+	 *
+	 *@param adminId - user id for bank administrator
+	 *@param adminPassword - login password for bank administrator
+	 *@return count - status if administrator is valid or not 
+	 */
+	int validateAdmin(String adminId, String adminPassword) throws BankingException;
+
+	void updateUserDetails(String uid, long actId) throws BankingException;
+
+	List<TransactionsBean> viewDetailStatement(long accId, Date initDate, Date finDate) throws BankingException;
+
+	List<TransactionsBean> adminViewTransactions(long accId) throws BankingException;
+
+
+	void updateCustomerAddress(CustomerBean customer) throws BankingException;
+
+	CustomerBean fetchCustomerByAccountId(long accountId) throws BankingException;
+
+	/**
+	 * Fetch account Id for a user from customer table
+	 * 
+	 * Account Id is fetched from customer records for the user with user name provided
+	 * @param userName - user name for which accountId is fetched 
+	 * @return accountId - accountId fetched for user
+	 */
+	long fetchAccountIdFromCustomer(String userName) throws BankingException;
+
+	AccountBean fetchAccountByAccountId(long accountId) throws BankingException;
+
+	List<TransactionsBean> viewMiniStatement(long accId) throws BankingException;
+
+	PayeeBean insertPayeeDetails(PayeeBean payee) throws BankingException;
+
+	void insertFundTransferDetails(FundTransferBean fundTransfer) throws BankingException;
+
+	AccountBean updateBalance(AccountBean account) throws BankingException;
+
+	AccountBean updateBalanceForPayee(AccountBean accountByPayeeId) throws BankingException;
+
+	String randPassword();
+
+	/**
+	 * Update login password for user
+	 * 
+	 * This method updates the login password for user that matches with user name provided
+	 * @param userBean - user for which login password is required to be updated
+	 * 
+	 */
+	void updateloginpassword(UserBean userBean) throws BankingException;
+
+	   /**
+	    * Update accountId for user 
+	    * 
+	    * AccountId is updated in user records for the user provided
+	    * 
+	    * @param userBean - user record that is to be updated in user table 
+	    * @return userBean - updated user record is returned
+	    */
+	UserBean updateAccountIdinUser(UserBean userBean) throws BankingException;
+
+	TransactionsBean insertTransactionDetails(TransactionsBean transaction) throws BankingException;
+
+	CustomerBean fetchCustomerByUserId(String username) throws BankingException;
+
+	List<TransactionsBean> fetchTransactionsByAccountId(long accountId) throws BankingException;
+
+	CustomerBean test(long initialaccountid, String customerName, String email, String address, String panCard,
+			String accountType, String userName);
+
+	/**
+	 * Insert customer record customer table
+	 * 
+	 * Customer record is inserted into Customer table after opening the account in Bank
+	 * 
+	 * @param - customer record to be inserted
+	 * @return - customer record
+	 */
+	CustomerBean insertIntoCustomer(long initialAccountId, String customerName, String email, String address,
+			String panCard, String accountType, String userName) throws BankingException;
+
+	/**
+	 * Method to insert account record into account master table
+	 * 
+	 * @param accountBean - account record to be inserted into account master
+	 * @return - inserted account record is returned
+	 */
+	AccountBean insertIntoAccountMaster(long updatedAccountId, String accountType, Date opendate, double initialBalance)
+			throws BankingException;
+
+	/** 
+	 * Register the user in bank
+	 * 
+	 * This Method recieves the user record after signup and inserts it into usertable in database.
+	 *  
+	 * @param userBean - user record that is inserted into usertable 
+	 * @return userBean - user record inserted
+	 * @throws BankingException
+	 */
+	UserBean registerUser(long initialaccountid, String userName, String password,
+			String transactionPassword, String lockstatus,
+			String secretQuestion, String secretAnswer) throws BankingException;
+
+
+}

@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.cg.project.utils.Constants"/>
+<fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
+<fullyQualifiedTypeName name="com.cg.project.utils.RequestPage"/>
+<fullyQualifiedTypeName name="javax.resource.spi.AdministeredObject"/>
+</qualifiedTypeNameHistroy>
