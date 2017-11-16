@@ -12,5 +12,4 @@
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/WEB-INF/JSPFiles/" p:suffix=".jsp" />
-
 </beans>

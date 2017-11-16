@@ -122,25 +122,6 @@ public class BankingServiceImpl implements IBankingService {
 		return dao.updateAccountIdinUser(userBean);
 	}
 
-	/*
-	 * @Override public UserBean validateUser(String userId) throws BankingException
-	 * { // TODO Auto-generated method stub return null; }
-	 * 
-	 * @Override public CustomerBean changeAddress(CustomerBean customer) throws
-	 * BankingException { // TODO Auto-generated method stub return null; }
-	 * 
-	 * @Override public CustomerBean viewCustomer(long accId) { // TODO
-	 * Auto-generated method stub return null; }
-	 * 
-	 * @Override public UserBean viewAccountId(String userId) { // TODO
-	 * Auto-generated method stub return null; }
-	 * 
-	 * @Override public AccountBean viewAccount(long accId) { // TODO Auto-generated
-	 * method stub return null; }
-	 * 
-	 * @Override public UserBean getUserName(long accId) { // TODO Auto-generated
-	 * method stub return null; }
-	 */
 
 	/**
 	 * DetailedStatement for the customer
