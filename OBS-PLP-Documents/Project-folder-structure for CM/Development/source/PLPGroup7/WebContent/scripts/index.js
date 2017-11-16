@@ -43,9 +43,6 @@ function validateDateForm() {
     var startDate = new Date(document.getElementById("startDate").value);
     var endDate = new Date(document.getElementById("endDate").value);
                 
-    alert(startDate);
-    alert(endDate);
-                
     var sDay = startDate.getDate();
     var sMonth = startDate.getMonth() + 1;
     var sYear = startDate.getYear() + 1900;
@@ -60,5 +57,5 @@ function validateDateForm() {
         alert("Starting date should be lesser than ending date");
         return false;
     }      
-    return false;
+    return true;
 }

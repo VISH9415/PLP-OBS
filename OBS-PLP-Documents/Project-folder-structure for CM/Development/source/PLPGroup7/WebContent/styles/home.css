@@ -368,8 +368,8 @@ input[type=radio] {
     position: absolute;
     width: 500px;
     height: 400px;
-    top: 5%;
-    left: 0%;
+    top: 20%;
+    left: 25%;
 }
 
 #hr-ft-formContainer h1 {
@@ -465,4 +465,8 @@ th, td {
 
 #hr-detailedDetailAsk h1 {
     text-align: center;
+}
+
+input[type=number] {
+	width: 420px;
 }

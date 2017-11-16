@@ -12,7 +12,7 @@
 <script type="text/javascript" src="scripts/index.js"></script>
 <script type="text/javascript" src="scripts/test.js"></script>
 </head>
-<body>
+<body onload="validateDates()">
 	<div id="container">
 		<div id="header">
 			<ul>
@@ -137,7 +137,7 @@
 									</p>
 									<p>
 										<label for="ft-amount">Enter amount to transfer:</label> <input
-											type="number" id="ft-amount" name="ft-amount"
+											type="number" id="ft-amount" name="ft-amount" min="0"
 											placeholder="Enter amount to transfer" pattern="[0-9]{1,}"
 											required />
 									</p>
@@ -236,13 +236,13 @@
                         <div id="hr-detailedStatementForm">
                             <div id="hr-detailedDetailAsk">
                                 <h1>View Detailed Statement</h1>
-                                <form action="detailedStatement.htm" method="post">
+                                <form action="detailedStatement.htm" method="post" onsubmit="return validateDateForm();">
                             <p>
                             <input type="hidden" name="userName" value="${userName}"/>
                             </p>    
 									<p>
                                         <label for="detailedAccountNumber">Account Number</label>
-                                        <input type="number" id="miniAccountNumber" name="miniAccountNumber" placeholder="Enter your account number" required />
+                                        <input type="number" id="miniAccountNumber" name="miniAccountNumber" placeholder="Enter your account number" min="0" required />
                                     </p>
                                     <p>
                                         <label for="startDate">Enter Starting Date</label>
