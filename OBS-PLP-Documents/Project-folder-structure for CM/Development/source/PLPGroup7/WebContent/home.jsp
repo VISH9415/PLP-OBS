@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="styles/forms.css">
 <link rel="stylesheet" type="text/css" href="styles/home.css">
 <link rel="stylesheet" type="text/css" href="styles/newWindow.css">
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito|Spectral+SC|Ubuntu" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito|Spectral+SC|Ubuntu"
+	rel="stylesheet">
 <script type="text/javascript" src="scripts/index.js"></script>
 <script type="text/javascript" src="scripts/test.js"></script>
 </head>
@@ -96,10 +98,14 @@
 					<div id="body-left">
 
 						<div id="homeButtonsTab">
-							<a href="home.jsp#hr-viewBalance"><div id="h-viewBalance" class="homeButtons">View Balance</div></a> <a
-								href="home.jsp#hr-fundTransfer"><div id="h-fundTransfer" class="homeButtons">Fund Transfer</div></a> <a
-								href="home.jsp#hr-changePassword"><div id="h-changePassword" class="homeButtons">Change Password</div></a> <a
-								href="home.jsp#hr-changeAddress"><div id="h-changeAddress" class="homeButtons">Change Address</div></a>
+							<a href="home.jsp#hr-viewBalance"><div id="h-viewBalance"
+									class="homeButtons">View Balance</div></a> <a
+								href="home.jsp#hr-fundTransfer"><div id="h-fundTransfer"
+									class="homeButtons">Fund Transfer</div></a> <a
+								href="home.jsp#hr-changePassword"><div id="h-changePassword"
+									class="homeButtons">Change Password</div></a> <a
+								href="home.jsp#hr-changeAddress"><div id="h-changeAddress"
+									class="homeButtons">Change Address</div></a>
 						</div>
 					</div>
 
@@ -109,8 +115,10 @@
 						</div>
 						<div id="hr-viewBalance">
 							<div id="bal-container">
-								<a href="home.jsp#hr-miniStatementForm"><div id="miniStatement">Mini Statement</div></a> <a
-									href="home.jsp#hr-detailedStatementForm"><div id="detailedStatement">Detailed Statement</div></a>
+								<a href="home.jsp#hr-miniStatementForm"><div
+										id="miniStatement">Mini Statement</div></a> <a
+									href="home.jsp#hr-detailedStatementForm"><div
+										id="detailedStatement">Detailed Statement</div></a>
 							</div>
 						</div>
 
@@ -201,6 +209,9 @@
 								<h1>Change Address</h1>
 								<form action="changeAddress.htm" method="post">
 									<p>
+										<input type="hidden" name="userName" value="${userName}" />
+									</p>
+									<p>
 										<label for="ft-newAddress">New Address:</label> <input
 											type="text" id="ft-newAddress" name="ft-newAddress"
 											placeholder="Enter your new address" required />
@@ -223,8 +234,9 @@
 										<input type="hidden" name="userName" value="${userName}" />
 									</p>
 									<p>
-										<label for="miniAccountNumber">Account Number</label>
-										 <input	type="text" id="miniAccountNumber" name="miniAccountNumber" placeholder="Enter your account number" required />
+										<label for="miniAccountNumber">Account Number</label> <input
+											type="text" id="miniAccountNumber" name="miniAccountNumber"
+											placeholder="Enter your account number" required />
 									</p>
 									<p>
 										<input type="submit" value="View Mini Statement">
@@ -232,32 +244,34 @@
 								</form>
 							</div>
 						</div>
-						
-                        <div id="hr-detailedStatementForm">
-                            <div id="hr-detailedDetailAsk">
-                                <h1>View Detailed Statement</h1>
-                                <form action="detailedStatement.htm" method="post" onsubmit="return validateDateForm();">
-                            <p>
-                            <input type="hidden" name="userName" value="${userName}"/>
-                            </p>    
+
+						<div id="hr-detailedStatementForm">
+							<div id="hr-detailedDetailAsk">
+								<h1>View Detailed Statement</h1>
+								<form action="detailedStatement.htm" method="post"
+									onsubmit="return validateDateForm();">
 									<p>
-                                        <label for="detailedAccountNumber">Account Number</label>
-                                        <input type="number" id="miniAccountNumber" name="miniAccountNumber" placeholder="Enter your account number" min="0" required />
-                                    </p>
-                                    <p>
-                                        <label for="startDate">Enter Starting Date</label>
-                                        <input type="date" id="startDate" name = "startDate" required>
-                                    </p>
-                                    <p>
-                                        <label for="endDate">Enter Ending Date</label>
-                                        <input type="date" id="endDate" name = "endDate" required>
-                                    </p>
-                                    <p>
-                                        <input type="submit" value="View Detailed Statement">
-                                    </p>
-                                </form>
-                            </div>
-                        </div>
+										<input type="hidden" name="userName" value="${userName}" />
+									</p>
+									<p>
+										<label for="detailedAccountNumber">Account Number</label> <input
+											type="number" id="miniAccountNumber" name="miniAccountNumber"
+											placeholder="Enter your account number" min="0" required />
+									</p>
+									<p>
+										<label for="startDate">Enter Starting Date</label> <input
+											type="date" id="startDate" name="startDate" required>
+									</p>
+									<p>
+										<label for="endDate">Enter Ending Date</label> <input
+											type="date" id="endDate" name="endDate" required>
+									</p>
+									<p>
+										<input type="submit" value="View Detailed Statement">
+									</p>
+								</form>
+							</div>
+						</div>
 
 					</div>
 				</div>
